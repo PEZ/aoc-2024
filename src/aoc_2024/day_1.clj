@@ -23,18 +23,13 @@
        parse-input
        (map sort)
        (apply util/collection-distance)
-       (apply +))
-  )
+       (apply +)))
 
 ;; part 2
 (comment
   (let [[a b] (parse-input input)
         count-ids (frequencies b)]
-
-    (->> a
+    (->> (parse-input input)
          (map #(count-ids % 0))
          (map * a)
          (apply +))))
-
-
-
